@@ -3,11 +3,12 @@ kata="kata6-save-my-commit"
 # Include utils
 source ../utils/utils.sh
 
-makerepo
+make-exercise-repo
 
 echo "initial" > thing.txt
 git add thing.txt
-git commit -m "Inital commit"
+git commit -m "Initial commit"
+git tag initial-commit
 
 echo "This is a relevant fact" > file.txt
 
