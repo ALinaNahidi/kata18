@@ -131,8 +131,8 @@ git stash apply <stash>                 # Apply given <stash>, or if none given 
 
 # Working with Branches
 git branch my-branch       # Create a new branch called my-branch
-git checkout my-branch     # Checkout ("Switch" to work on) my-branch
-git checkout -b my-branch  # Create a new branch called my-branch AND switch to it
+git switch my-branch     # Switch to a different branch to work on it
+git switch -c my-branch  # Create a new branch called my-branch AND switch to it
 git branch -d my-branch    # Delete branch my-branch that has been merged with master
 git branch -D my-branch    # Forcefully delete a branch my-branch that hasn't been merged to master
 
@@ -155,10 +155,10 @@ git mv <source/file> <destination/file>   # move/rename file and stage the chang
 # Aliases - it's possible to make aliases of frequently used commands
 #   This is often done to make a command shorter, or to add default flags
 
-# Adding a shorthand "co" for "checkout"
-git config --global alias.co "checkout"
+# Adding a shorthand "sw" for "switch"
+git config --global alias.sw "switch"
 # Usage:
-git co      # Does a "git checkout"
+git sw master     # Does a "git switch master"
 
 ## Logging
 git log --graph --oneline --all # Show a nice graph of the previous commits
@@ -174,7 +174,9 @@ There is a very small test that you can run in powershell or bash.
 It is contained in the scripts `test.sh` and `test.ps1`.
 
 ### Cleanup
+
 You can remove testing artifacts, `exercise` directories, with the git clean command:
+
 ```sh
 git clean -ffdX
 ```
